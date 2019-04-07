@@ -6,6 +6,7 @@ const Order = require('./order');
 const OrderDetail = require('./order_detail');
 const ProductCategory = require('./product_category');
 const UserAddress = require('./address');
+const userType = require('./user_type');
 
 module.exports = {
   User,
@@ -15,5 +16,6 @@ module.exports = {
   Order,
   OrderDetail,
   ProductCategory,
-  UserAddress
+  UserAddress,
+  userType
 };
