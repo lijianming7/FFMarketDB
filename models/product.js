@@ -19,10 +19,18 @@ const productSchema = new mongoose.Schema({
   coverImg: {
     type: String,
   },
+  isActive:{
+    type: Boolean,
+    default:false,
+  },
   productCategory: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'ProductCategory'
-  }
+  },
+  seller: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'Seller'
+  },
 }, {
   timestamps: true,
 });

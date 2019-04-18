@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
 		query.name = new RegExp(name,"i"); // 查询条件 正则
   }
   const totalCount = await Product.find(query).count();
-  const products = await Product.find(query).populate('productCategory').sort({ createdAt: -1 })
+  const products = await Product.find(query).populate('productCategory seller').sort({ createdAt: -1 })
     .limit(per)
     .skip(per * (page - 1));
   res.json({

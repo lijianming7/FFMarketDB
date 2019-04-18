@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { userType } = require('../../models');
+const { userType } = require('../../models/index');
 
 router.get('/', async (req, res, next) => {
   const per = req.query.per * 1 || 10; // 每一页的数量

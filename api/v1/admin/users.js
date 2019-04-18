@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
 		query.nickName = new RegExp(nickName,"i"); // 查询条件 正则
   }
   const totalCount = await User.find(query).count();
-  const users = await User.find(query).sort({ createdAt: -1 })
+  const users = await User.find(query).populate('userType').sort({ createdAt: -1 })
     .limit(per)
     .skip(per * (page - 1));
   res.json({

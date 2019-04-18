@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
+  userType: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'userType'
+  }
 }, {
   timestamps: true,
 });

@@ -67,6 +67,7 @@ router.post('/reg', async (req, res, next) => {
       res.json({
         code: 'success',
         token,
+        userResult
       });
     }
   } catch (err) {

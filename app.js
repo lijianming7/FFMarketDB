@@ -41,6 +41,8 @@ app.use('/', express.static('./public'));
 
 app.use('/api/v1/products', require('./api/v1/products'));
 app.use('/api/v1/product_categories', require('./api/v1/product_categories'));
+app.use('/api/v1/usertype', require('./api/v1/user_type'));
+app.use('/api/v1/news', require('./api/v1/news'));
 // 对api使用jwt权限验证
 app.use(jwtMiddle({
   secret: jwtSecret
@@ -82,11 +84,16 @@ app.use('/api/v1/admin/users', require('./api/v1/admin/users'));
 app.use('/api/v1/admin/product_categories', require('./api/v1/admin/product_categories'));
 app.use('/api/v1/admin/addresses', require('./api/v1/admin/addresses'));
 app.use('/api/v1/admin/orders', require('./api/v1/admin/orders'));
+app.use('/api/v1/admin/usertype', require('./api/v1/admin/user_type'));
+app.use('/api/v1/admin/news', require('./api/v1/admin/news'));
+app.use('/api/v1/admin/seller', require('./api/v1/admin/seller'));
+
 app.use('/api/v1/auth', require('./api/v1/auth'));
 app.use('/api/v1/users', require('./api/v1/users'));
 app.use('/api/v1/shop_carts', require('./api/v1/shop_carts'));
 app.use('/api/v1/orders', require('./api/v1/orders'));
 app.use('/api/v1/addresses', require('./api/v1/addresses'));
+app.use('/api/v1/seller', require('./api/v1/seller'));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
